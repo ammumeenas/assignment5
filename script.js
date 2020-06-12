@@ -56,18 +56,18 @@ window.addEventListener("load", function () {
       let copilotStatus = document.getElementById("copilotStatus");
       let launchStatus = document.getElementById("launchStatus");
       let cargoStatus = document.getElementById("cargoStatus");
+      document.getElementById("faultyItems").style.visibility = "visible";
 
       if (fuelLevel.value > 10000 && cargoMass.value < 10000) {
          launchStatus.innerHTML = "Shuttle ready for launch";
          launchStatus.style.color = "green";
+         pilotStatus.innerHTML = `Pilot ${pilotName.value} ready`;
+         copilotStatus.innerHTML = `Copilot ${copilotName.value} ready`;
 
       }
 
       else {
-         document.getElementById("faultyItems").style.visibility = "visible";
-         pilotStatus.innerHTML = `Pilot ${pilotName.value} ready`;
-         copilotStatus.innerHTML = `Copilot ${copilotName.value} ready`;
-         fuelStatus.innerHTML = "There is not enough fuel for the journey";
+       fuelStatus.innerHTML = "There is not enough fuel for the journey";
          cargoStatus.innerHTML = "There is too much mass for the shuttle to take off.";
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
