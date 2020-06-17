@@ -57,6 +57,20 @@ window.addEventListener("load", function () {
       let launchStatus = document.getElementById("launchStatus");
       let cargoStatus = document.getElementById("cargoStatus");
       document.getElementById("faultyItems").style.visibility = "visible";
+      if(pilotName.value === ""){
+         pilotStatus.innerHTML="Pilot not ready";
+      }
+      else{
+         pilotStatus.innerHTML=`Pilot ${pilotName.value} ready`;
+      }
+      if(copilotName.value === ""){
+         copilotStatus.innerHTML="Copilot not ready";
+      }
+      else{
+         copilotStatus.innerHTML=`Copilot ${copilotName.value} ready`;
+
+      }
+
 
       if (fuelLevel.value > 10000 && cargoMass.value < 10000) {
          launchStatus.innerHTML = "Shuttle ready for launch";
